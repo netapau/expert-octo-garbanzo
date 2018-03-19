@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace PdfCreator
 {
-    /// <summary>
-    /// Logique d'interaction pour App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        //public App()
+        //{
+        //    Startup += (s, e) => { System.Diagnostics.Debug.WriteLine("Demarrage de l'app ok !"); };
+        //    PdfCreator.Helpers.LogWriter.LogToFile("Start app");
+        //}
     }
 }
