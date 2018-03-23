@@ -6,11 +6,12 @@
       xmlns:local="clr-namespace:PdfCreator.Views"
       mc:Ignorable="d" 
       d:DesignHeight="170" d:DesignWidth="300"
-      Background="#7EAD35"
+      Background="#AFE9C6"
       Title="SplashPage">
     <Page.Resources>
         <BitmapImage x:Key="ImgLogo" UriSource="/Images/PdfCreator.png"/>
     </Page.Resources>
+    <Border Background="#010101" BorderThickness="4">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -26,4 +27,5 @@
                Foreground="White" FontSize="8" Opacity="0.9"
                VerticalAlignment="Top" HorizontalAlignment="Right"/>
     </Grid>
+    </Border>
 </Page>

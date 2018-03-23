@@ -16,5 +16,37 @@
             <Setter Property="Height" Value="20"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
         </Style>
+
+        <Style x:Key="btnWindowStyle" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btn" BorderBrush="Gray" BorderThickness="0">
+                            <Border.Background>#FF0A9CDF</Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}">
+                            </ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="Background" TargetName="btn" Value="blue"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="btn" Value="orange"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="btn" Value="red"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

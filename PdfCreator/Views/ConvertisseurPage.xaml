@@ -8,7 +8,7 @@
       d:DesignHeight="170" d:DesignWidth="300"
       Title="ConvertisseurPage">
 
-    <Grid>
+    <Grid Background="#AFE9C6">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="4*"/>
@@ -21,9 +21,9 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right"
                 Margin="1" VerticalAlignment="Top">
                 <Label Grid.Row="0" Content="Pdf Creator" Margin="160,0"
-                    Style="{DynamicResource TitreTextStyle}" Opacity="0.5"/>
-                <Button x:Name="BtnMinimize" Content="_" Style="{DynamicResource WinButtonStyle}"/>
-                <Button x:Name="BtnClose" Content="x" Style="{DynamicResource WinButtonStyle}" 
+                    Style="{DynamicResource TitreTextStyle}" Opacity="0.4"/>
+                <Button x:Name="BtnMinimize" Content="_" Style="{DynamicResource btnWindowStyle}"/>
+                <Button x:Name="BtnClose" Content="x" Style="{DynamicResource btnWindowStyle}" 
                         Margin="4"/>
             </StackPanel>
         </Border>
