@@ -7,6 +7,7 @@ namespace PdfCreator.Views
         public MainWindow()
         {
             InitializeComponent();
+            
             NavigationFrame.Navigate(new SplashPage());
         }
     }

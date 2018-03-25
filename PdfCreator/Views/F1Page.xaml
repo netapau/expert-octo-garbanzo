@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:PdfCreator.Views"
       mc:Ignorable="d" 
       d:DesignHeight="170" d:DesignWidth="300"
+      Background="#7EAD35" Height="170" Width="300"
       Title="F1Page">
 
     <Grid>
