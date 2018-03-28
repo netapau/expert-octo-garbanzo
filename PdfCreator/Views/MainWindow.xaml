@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PdfCreator"
         mc:Ignorable="d"
-        Title="Pdf Creator" Background="#7EAD35" Height="170" Width="300" 
+        Title="Pdf Creator" Height="170" Width="300" 
         x:Name="WinMain" WindowStyle="None" ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" Icon="/PdfCreator;component/Images/PdfCreator.png">
 

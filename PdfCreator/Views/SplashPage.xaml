@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PdfCreator"
       mc:Ignorable="d" 
       d:DesignHeight="170" d:DesignWidth="300"
       Background="#AFE9C6" Title="SplashPage">
@@ -11,20 +12,20 @@
         <BitmapImage x:Key="ImgLogo" UriSource="/Images/PdfCreator.png"/>
     </Page.Resources>
 
-    <Border Background="#010101" BorderThickness="4">
+    <Border Background="#409EFE" BorderThickness="4">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="6*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Pdf Creator..." Margin="10,-5" VerticalAlignment="Top"
-                        Style="{DynamicResource TitreTextStyle}" FontSize="36" Opacity="0.3"/>
+            <Label Grid.Row="0" Content="{x:Static local:Resources.AppTitre}" Margin="10,-5" VerticalAlignment="Top"
+                        Style="{DynamicResource TextStyle}" FontSize="36" Opacity="0.8"/>
             <Image Grid.Row="1" Source="{StaticResource ImgLogo}" Margin="115,6,34,6" 
                                    Width="151" Height="85" 
                                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Label Grid.Row="2" Content="Chargement..." Margin="10,0"
-                   Foreground="White" FontSize="10" Opacity="0.3"
+            <Label Grid.Row="2" Content="{x:Static local:Resources.Loading}" Margin="10,0"
+                   Foreground="White" FontSize="10" Opacity="0.2"
                    VerticalAlignment="Top" HorizontalAlignment="Right"/>
         </Grid>
     </Border>

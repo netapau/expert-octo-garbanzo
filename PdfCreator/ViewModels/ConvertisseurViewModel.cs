@@ -3,6 +3,7 @@ using PdfCreator.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows;
 
 namespace PdfCreator.ViewModels
 {
@@ -41,18 +42,17 @@ namespace PdfCreator.ViewModels
         #region [CTOR.]
         public ConvertisseurViewModel()
         {
-            // Ouvre le dossier images et alimente la liste d'images.
+            images = new List<string>();
+
+            // Ouvre le dossier contenant les images et alimente la liste d'images.
             OpenDir = new RelayCommand(
                 o =>
                 {
-                    // Recherche de fichiers image.
                     OpenFileDialog ofd = new OpenFileDialog
                     {
                         Filter = ImagesFilter.GetImageFilter()
                     };  
                     Nullable<bool> ret = ofd.ShowDialog();
-
-                    images = new List<string>();
 
                     if (ret == true)
                     {
@@ -78,8 +78,19 @@ namespace PdfCreator.ViewModels
             CreatePdf = new RelayCommand(
                 o => 
                 {
-                    var convert = new ConvertToPdf();
-                    convert.ConvertFromStringList(images);
+                    if (images.Count >= 1)
+                    {
+                        var convert = new ConvertToPdf();
+                        convert.ConvertFromStringList(images);
+                        convert.FileConverted += (sndr, ev) => MessageBox.Show($"Fichier crée:\n{ev.FileConverted}");
+                    }
+                    else
+                    {
+                        // TODO : faire un form de confirmation ??.
+                        MessageBox.Show(@"Vous devez :
+Choisir le dossier contenant des images.
+Les images a convertir doivent être dans l'ordre dans le dossier.");
+                    }
                 },
                 o => true);
 

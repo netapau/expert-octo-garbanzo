@@ -15,7 +15,7 @@ namespace PdfCreator.Views
                 Task T;
                 T = Task.Factory.StartNew(() =>
                 {
-                    Thread.Sleep(1800);
+                    Thread.Sleep(2000);
                     this.Dispatcher.Invoke(()=> this.NavigationService.Navigate(new ConvertisseurPage()));
                 });
             };

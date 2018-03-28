@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
+      xmlns:local="clr-namespace:PdfCreator"
       d:DesignHeight="170" d:DesignWidth="300"
       Title="ConvertisseurPage" x:Name="Convertisseur">
 
@@ -16,12 +17,12 @@
             </Grid.RowDefinitions>
 
             <!-- 0 -->
-            <Border Background="#0078D7">
-                <!-- Titre et boutons fenêtre -->
+            <Border Background="Yellow">
+                <!-- TITRE ET BOUTONS FENETRE -->
                 <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right"
                 Margin="1" VerticalAlignment="Top">
-                    <Label Grid.Row="0" Content="Pdf Creator" Margin="160,0"
-                    Style="{DynamicResource TitreTextStyle}" Opacity="0.4"/>
+                    <Label Grid.Row="0" Content="{x:Static local:Resources.AppTitre}" Margin="160,0"
+                    Style="{DynamicResource TitreTextStyle}" Opacity="0.8"/>
                     <Button x:Name="BtnMinimize" Content="_" Style="{DynamicResource btnWindowStyle}"
                             Command="{Binding AppMinimize}"/>
                     <Button x:Name="BtnClose" Content="x" Style="{DynamicResource btnWindowStyle}" 
@@ -29,33 +30,33 @@
                 </StackPanel>
             </Border>
 
-            <!-- 1 -->
+            <!-- ROW CHOIX DU DOSSIER -->
             <Grid Grid.Row="1"
                    Width="{Binding ElementName=WinMain,Path=ActualWidth}" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Dossier images" Margin="20,0" VerticalAlignment="Center"
+                <Label Grid.Column="0" Content="{x:Static local:Resources.LabelDossier}" Margin="20,0" VerticalAlignment="Center"
                    Style="{DynamicResource TextStyle}"/>
-                <!-- Choix du dossier des images. -->
-                <Button Grid.Column="1" x:Name="FolderToOpen" Content="Choisir" 
+                <!-- CHOIX DU DOSSIER DES IMAGES -->
+                <Button Grid.Column="1" x:Name="FolderToOpen" Content="{x:Static local:Resources.BtnChoix}" 
                     Style="{DynamicResource ButtonStyle}"
                     Command="{Binding OpenDir}"
                     />
             </Grid>
 
-            <!-- 2 -->
+            <!-- ROW CREATION -->
             <Grid Grid.Row="2"
                    Width="{Binding ElementName=WinMain,Path=ActualWidth}" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Créer fichier pdf" Margin="20,0" VerticalAlignment="Center"
+                <Label Grid.Column="0" Content="{x:Static local:Resources.LabelCreer}" Margin="20,0" VerticalAlignment="Center"
                    Style="{DynamicResource TextStyle}"/>
-                <!-- Créer pdf. -->
-                <Button Grid.Column="1" x:Name="BtnCreatePdf" Content="Créer" 
+                <!-- CREATION DU PDF -->
+                <Button Grid.Column="1" x:Name="BtnCreatePdf" Content="{x:Static local:Resources.BtnCreer}" 
                     Style="{DynamicResource ButtonStyle}"
                     Command="{Binding CreatePdf}"
                     />
