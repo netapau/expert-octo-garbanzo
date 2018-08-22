@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PdfCreator"
         mc:Ignorable="d"
-        Title="Pdf Creator" Height="170" Width="300" 
+        Title="Pdf Creator" Height="270" Width="400" 
         x:Name="WinMain" WindowStyle="None" ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" Icon="/PdfCreator;component/Images/PdfCreator.png">
 

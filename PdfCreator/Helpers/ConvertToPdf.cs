@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using System.Windows;
 using iTextSharp.text;
 
 namespace PdfCreator.Helpers
@@ -37,6 +36,7 @@ namespace PdfCreator.Helpers
         // Generation pdf.
         public async void ConvertFromStringList(List<string> listeDeImages)
         {
+            // TODO : Verifier le lock correctement.
             if (working == false)
             { 
                 working = true;
@@ -81,8 +81,6 @@ namespace PdfCreator.Helpers
                                 doc.Add(pic);
                                 doc.NewPage();
                             }
-                            // TODO : Event pour signaler la conversion ok.
-                            // TODO : passer en Async
                         }
                         catch (DocumentException de)
                         {

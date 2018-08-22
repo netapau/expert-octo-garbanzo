@@ -5,29 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
       xmlns:local="clr-namespace:PdfCreator"
-      d:DesignHeight="170" d:DesignWidth="300"
+      d:DesignHeight="270" d:DesignWidth="400"
       Title="ConvertisseurPage" x:Name="Convertisseur">
-
+    <Page.Resources>
+        <BitmapImage x:Key="ImgLogo" UriSource="/Images/PdfCreator.png"/>
+    </Page.Resources>
     <Border Background="#0078D7" BorderThickness="1">
         <Grid x:Name="GridConvert" Background="#409EFE">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
 
             <!-- 0 -->
             <Border Background="Yellow">
                 <!-- TITRE ET BOUTONS FENETRE -->
-                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right"
-                Margin="1" VerticalAlignment="Top">
-                    <Label Grid.Row="0" Content="{x:Static local:Resources.AppTitre}" Margin="160,0"
-                    Style="{DynamicResource TitreTextStyle}" Opacity="0.8"/>
-                    <Button x:Name="BtnMinimize" Content="_" Style="{DynamicResource btnWindowStyle}"
+                <Grid Height="35">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Image Source="{StaticResource ImgLogo}" Width="25" Height="22" Margin="4,0"/>
+                        <Label Content="{x:Static local:Resources.AppTitre}" Margin="0"
+                        Style="{DynamicResource TitreTextStyle}" Opacity="0.8" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right"
+                        Margin="1" VerticalAlignment="Center">
+                        
+                        <Button x:Name="BtnMinimize" Content="_" Style="{DynamicResource btnWindowStyle}"
                             Command="{Binding AppMinimize}"/>
-                    <Button x:Name="BtnClose" Content="x" Style="{DynamicResource btnWindowStyle}" 
-                            Command="{Binding AppClose}" Margin="4"/>
-                </StackPanel>
+                        <Button x:Name="BtnClose" Content="x" Style="{DynamicResource btnWindowStyle}" 
+                            Command="{Binding AppClose}" Margin="5,0"/>
+                    </StackPanel>
+                </Grid>
             </Border>
 
             <!-- ROW CHOIX DU DOSSIER -->
